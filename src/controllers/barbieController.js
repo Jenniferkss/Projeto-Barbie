@@ -7,7 +7,7 @@ const getAllBarbies = (req,res) => {
         total: resultado.lenght,
         barbies: resultado
     })
-}
+};
 
 const getBarbiesById = (req,res)=> {
     let id = parseInt(req.params.id);
@@ -17,7 +17,7 @@ const getBarbiesById = (req,res)=> {
         sucess:true,
         barbie : barbie
     })
-}
+};
 
 const createBarbie = (req,res) => {
     const {nome,profissao,anoLancamento} = req.body;
@@ -42,12 +42,11 @@ res.status(201).json({
     message:"Barbie cadastrado com sucesso!",
     barbie: novaBarbie
 })
-}
+};
 
 const deleteBarbie = (req, res) => {
     const { id } = req.params;
 
-    // Validar ID
     if (isNaN(id)) {
         return res.status(400).json({
             success: false,
@@ -57,7 +56,6 @@ const deleteBarbie = (req, res) => {
 
     const idParaApagar = parseInt(id);
     
-    // Verificar se bruxo existe antes de remover
     const barbieParaRemover = barbies.find(b => b.id === idParaApagar);
     if (!barbieParaRemover) {
         return res.status(404).json({
@@ -66,10 +64,8 @@ const deleteBarbie = (req, res) => {
         });
     }
 
-    // Remover bruxo usando filter
     const barbieFiltrado = barbies.filter(barbie => barbie.id !== idParaApagar);
     
-    // Atualizar array global
     barbies.splice(0, barbies.length, ...barbieFiltrado);
 
     res.status(200).json({
