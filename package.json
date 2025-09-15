@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cls && nodemon server.js"
+    "dev": "cls && nodemon server.js",
+    "start": "node server.js"
   },
-  "keywords": ["MVC","nodemon"],
+  "keywords": [
+    "MVC",
+    "nodemon"
+  ],
   "author": "Jennifer",
   "license": "MIT",
   "description": "Atividade Barbie MVC",
@@ -15,5 +19,13 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jenniferkss/Projeto-Barbie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jenniferkss/Projeto-Barbie/issues"
+  },
+  "homepage": "https://github.com/Jenniferkss/Projeto-Barbie#readme"
 }
